@@ -1,7 +1,10 @@
+# Update CSS for a cuter, more appealing design
+css_content_updated = """
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f4ef;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,53 +14,81 @@ body {
 }
 
 .form-container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     text-align: center;
+    border: 2px solid #f7ebe1;
 }
 
 h1 {
-    color: #558b6e;
+    color: #6d8b74;
     margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 24px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 label {
-    color: #333;
+    color: #5f5f5f;
     font-size: 14px;
+    text-align: left;
 }
 
-input, select, textarea, button {
+input, select, textarea {
     font-size: 14px;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    outline: none;
+    transition: all 0.3s ease;
     width: 100%;
 }
 
+input:focus, select:focus, textarea:focus {
+    border-color: #6d8b74;
+    box-shadow: 0 0 8px rgba(109, 139, 116, 0.3);
+}
+
 button {
-    background-color: #d1a3a3;
+    background-color: #f7c3c3;
     color: white;
     border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 button:hover {
-    background-color: #c27d7d;
+    background-color: #e09b9b;
+    transform: scale(1.05);
 }
 
 #message {
     margin-top: 20px;
     font-size: 14px;
-    color: #558b6e;
+    color: #6d8b74;
 }
+
+textarea {
+    resize: none;
+}
+"""
+
+# Save the updated CSS
+css_path_updated = f"{base_path}/style.css"
+with open(css_path_updated, "w") as css_file_updated:
+    css_file_updated.write(css_content_updated)
+
+css_path_updated
