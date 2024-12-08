@@ -10,6 +10,9 @@ document.getElementById('order-form').addEventListener('submit', function(event)
     fetch('https://script.google.com/macros/s/1_Gzrk__JgiShntZqFJH4xmuKJt8SH3ElTZiegPhPAAg/exec', {
         method: 'POST',
         body: data,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
     })
     .then(response => response.json())
     .then(result => {
