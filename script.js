@@ -33,5 +33,6 @@ document.getElementById("order-form").addEventListener("submit", function(event)
     })
     .catch(error => {
         document.getElementById("message").innerText = "Error: " + error.message;
+        console.error("Fetch error: ", error);
     });
 });
