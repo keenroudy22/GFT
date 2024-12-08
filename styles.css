@@ -29,14 +29,7 @@ body {
     text-align: center;
 }
 
-/* Header Styling */
-h1 {
-    color: #6b705c;
-    font-size: 2.2em;
-    margin-bottom: 20px;
-}
-
-/* Form Elements */
+/* Form Fields */
 .form-field {
     margin-bottom: 20px;
     text-align: left;
@@ -45,8 +38,8 @@ h1 {
 label {
     font-size: 1.1em;
     color: #6b705c;
-    margin-bottom: 10px;
     display: block;
+    margin-bottom: 5px;
 }
 
 input, select, textarea {
@@ -55,8 +48,8 @@ input, select, textarea {
     font-size: 1em;
     border: 2px solid #dcd7c9;
     border-radius: 5px;
-    box-sizing: border-box;
     background-color: #f9f9f7;
+    box-sizing: border-box;
     transition: border-color 0.3s ease;
 }
 
@@ -65,7 +58,12 @@ input:focus, select:focus, textarea:focus {
     outline: none;
 }
 
-/* Button Styling */
+/* Checkbox Styling */
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
 button {
     background-color: #6b705c;
     color: white;
@@ -82,26 +80,10 @@ button:hover {
     background-color: #55624c;
 }
 
-/* Textarea Styling */
-textarea {
-    resize: vertical;
-}
-
-/* Message Display */
-#message {
-    margin-top: 20px;
-    font-size: 1.1em;
+/* Total Price */
+#total-price {
+    font-size: 1.2em;
     font-weight: bold;
-    color: #6b705c;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 500px) {
-    .order-form-container {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
+    margin: 20px 0;
+    color: #4caf50;
 }
