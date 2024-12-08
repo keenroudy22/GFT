@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Folk Tallow Order Form</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="order-form-container">
-        <!-- Logo -->
         <img src="logo.jpg" alt="Green Folk Tallow Logo" class="logo">
         <h1>Order Your Green Folk Tallow</h1>
         <form id="order-form">
+            <!-- Name Field -->
             <div class="form-field">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required />
             </div>
 
+            <!-- Phone Number -->
+            <div class="form-field">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+            </div>
+
+            <!-- Product Size -->
             <div class="form-field">
                 <label for="size">Product Size:</label>
                 <select id="size" name="size" required>
@@ -25,6 +32,7 @@
                 </select>
             </div>
 
+            <!-- Scent -->
             <div class="form-field">
                 <label for="scent">Scent:</label>
                 <select id="scent" name="scent" required>
@@ -33,26 +41,29 @@
                 </select>
             </div>
 
+            <!-- Quantity -->
             <div class="form-field">
                 <label for="quantity">Quantity:</label>
                 <input type="number" id="quantity" name="quantity" min="1" value="1" required />
             </div>
 
-            <div id="total-price">Total: $0.00</div> <!-- Section for total price -->
+            <!-- Total Price -->
+            <div id="total-price">Total: $0.00</div>
 
-            <!-- Shipping option -->
+            <!-- Shipping -->
             <div class="form-field">
                 <label>
                     <input type="checkbox" id="needs-shipping" /> Shipping Needed?
                 </label>
             </div>
 
-            <!-- Address field, hidden by default -->
+            <!-- Address Field -->
             <div class="form-field" id="address-field" style="display: none;">
                 <label for="address">Shipping Address:</label>
-                <textarea id="address" name="address" placeholder="Enter shipping address"></textarea>
+                <textarea id="address" name="address" placeholder="Enter your shipping address"></textarea>
             </div>
 
+            <!-- Special Requests -->
             <div class="form-field">
                 <label for="specialRequests">Special Requests:</label>
                 <textarea id="specialRequests" name="specialRequests" placeholder="Any special requests?" rows="4"></textarea>
@@ -64,6 +75,6 @@
         <div id="message"></div>
     </div>
 
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
