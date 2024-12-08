@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Folk Tallow Order Form</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the updated CSS file -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 <body>
     <div class="order-form-container">
-        <!-- Larger Logo -->
+        <!-- Logo -->
         <img src="logo.jpg" alt="Green Folk Tallow Logo" class="logo">
         <h1>Order Your Green Folk Tallow</h1>
         <form id="order-form">
@@ -20,8 +20,8 @@
             <div class="form-field">
                 <label for="size">Product Size:</label>
                 <select id="size" name="size" required>
-                    <option value="1.5 oz">1.5 oz - $10</option>
-                    <option value="4.9 oz">4.9 oz - $20</option>
+                    <option value="1.5 oz" data-price="10">1.5 oz - $10</option>
+                    <option value="4.9 oz" data-price="20">4.9 oz - $20</option>
                 </select>
             </div>
 
@@ -38,6 +38,21 @@
                 <input type="number" id="quantity" name="quantity" min="1" value="1" required />
             </div>
 
+            <div id="total-price">Total: $0.00</div> <!-- Section for total price -->
+
+            <!-- Shipping option -->
+            <div class="form-field">
+                <label>
+                    <input type="checkbox" id="needs-shipping" /> Shipping Needed?
+                </label>
+            </div>
+
+            <!-- Address field, hidden by default -->
+            <div class="form-field" id="address-field" style="display: none;">
+                <label for="address">Shipping Address:</label>
+                <textarea id="address" name="address" placeholder="Enter shipping address"></textarea>
+            </div>
+
             <div class="form-field">
                 <label for="specialRequests">Special Requests:</label>
                 <textarea id="specialRequests" name="specialRequests" placeholder="Any special requests?" rows="4"></textarea>
@@ -49,6 +64,6 @@
         <div id="message"></div>
     </div>
 
-    <script src="script.js"></script> <!-- Link to the updated JavaScript file -->
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
