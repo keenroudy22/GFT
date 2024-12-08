@@ -11,7 +11,7 @@ document.getElementById('order-form').addEventListener('submit', function(event)
         method: 'POST',
         body: data,
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded'  // Ensure proper encoding
         }
     })
     .then(response => response.json())
