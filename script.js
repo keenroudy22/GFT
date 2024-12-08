@@ -15,7 +15,7 @@ document.getElementById("order-form").addEventListener("submit", function(event)
         specialRequests
     };
 
-    fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec", {
+    fetch("https://script.google.com/macros/s/1_Gzrk__JgiShntZqFJH4xmuKJt8SH3ElTZiegPhPAAg/exec", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
