@@ -1,7 +1,8 @@
+
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #fafafa;
+    background-color: #f9f5f0;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,10 +11,12 @@ body {
     height: 100vh;
 }
 
-h1 {
-    color: #4caf50;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+/* Logo Styling */
+.logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
 }
 
 /* Container for the form */
@@ -27,7 +30,14 @@ h1 {
     text-align: center;
 }
 
-/* Form elements */
+/* Header Styling */
+h1 {
+    color: #6b705c;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
 .form-field {
     margin-bottom: 20px;
     text-align: left;
@@ -35,7 +45,7 @@ h1 {
 
 label {
     font-size: 1.1em;
-    color: #333;
+    color: #6b705c;
     margin-bottom: 10px;
     display: block;
 }
@@ -44,21 +54,21 @@ input, select, textarea {
     width: 100%;
     padding: 12px;
     font-size: 1em;
-    border: 2px solid #ccc;
+    border: 2px solid #dcd7c9;
     border-radius: 5px;
     box-sizing: border-box;
-    background-color: #f9f9f9;
+    background-color: #f9f9f7;
     transition: border-color 0.3s ease;
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: #4caf50;
+    border-color: #6b705c;
     outline: none;
 }
 
-/* Button styles */
+/* Button Styling */
 button {
-    background-color: #4caf50;
+    background-color: #6b705c;
     color: white;
     padding: 15px 25px;
     font-size: 1.2em;
@@ -70,25 +80,20 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #55624c;
 }
 
+/* Textarea Styling */
 textarea {
     resize: vertical;
 }
 
-/* Success and Error Messages */
+/* Message Display */
 #message {
     margin-top: 20px;
     font-size: 1.1em;
     font-weight: bold;
-    color: #4caf50;
-}
-
-/* Styling for error messages */
-#error-message {
-    color: red;
-    font-weight: bold;
+    color: #6b705c;
 }
 
 /* Responsive Design */
