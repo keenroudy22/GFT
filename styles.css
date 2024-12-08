@@ -1,4 +1,7 @@
+# Recreating the updated CSS file after reset
 
+# Updated CSS to include the logo and adjust to neutral tones
+updated_css = """
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
@@ -106,3 +109,11 @@ textarea {
         font-size: 2em;
     }
 }
+"""
+
+# Save the updated CSS file
+css_path_updated = "/mnt/data/GreenFolkTallow/styles.css"
+with open(css_path_updated, "w") as css_file:
+    css_file.write(updated_css)
+
+css_path_updated
