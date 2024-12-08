@@ -10,17 +10,17 @@
     <div class="order-form-container">
         <img src="logo.jpg" alt="Green Folk Tallow Logo" class="logo">
         <h1>Order Your Green Folk Tallow</h1>
-        <form id="order-form">
+        <form id="order-form" autocomplete="off">
             <!-- Name Field -->
             <div class="form-field">
                 <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="off" />
             </div>
 
             <!-- Phone Number -->
             <div class="form-field">
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required autocomplete="off" />
             </div>
 
             <!-- Product Size -->
@@ -44,7 +44,7 @@
             <!-- Quantity -->
             <div class="form-field">
                 <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1" required />
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required autocomplete="off" />
             </div>
 
             <!-- Total Price -->
@@ -53,7 +53,7 @@
             <!-- Special Requests -->
             <div class="form-field">
                 <label for="specialRequests">Special Requests:</label>
-                <textarea id="specialRequests" name="specialRequests" placeholder="Any special requests?" rows="4"></textarea>
+                <textarea id="specialRequests" name="specialRequests" placeholder="Any special requests?" rows="4" autocomplete="off"></textarea>
             </div>
 
             <button type="submit">Submit Order</button>
