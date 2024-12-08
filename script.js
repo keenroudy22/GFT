@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
         totalPriceDisplay.textContent = `Total: $${total.toFixed(2)}`;
     }
 
-    // Show/hide address field based on shipping checkbox
     needsShippingCheckbox.addEventListener("change", function() {
         if (needsShippingCheckbox.checked) {
             addressField.style.display = "block";
@@ -24,10 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Update total when size or quantity changes
     sizeSelect.addEventListener("change", calculateTotal);
     quantityInput.addEventListener("input", calculateTotal);
 
-    // Initial calculation
     calculateTotal();
 });
