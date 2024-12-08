@@ -58,12 +58,6 @@ input:focus, select:focus, textarea:focus {
     outline: none;
 }
 
-/* Checkbox Styling */
-input[type="checkbox"] {
-    width: auto;
-    margin-right: 10px;
-}
-
 button {
     background-color: #6b705c;
     color: white;
