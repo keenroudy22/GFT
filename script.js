@@ -1,38 +1,33 @@
-document.getElementById("order-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+document.addEventListener("DOMContentLoaded", function() {
+    const sizeSelect = document.getElementById("size");
+    const quantityInput = document.getElementById("quantity");
+    const totalPriceDisplay = document.getElementById("total-price");
+    const needsShippingCheckbox = document.getElementById("needs-shipping");
+    const addressField = document.getElementById("address-field");
 
-    const name = document.getElementById("name").value;
-    const size = document.getElementById("size").value;
-    const scent = document.getElementById("scent").value;
-    const quantity = document.getElementById("quantity").value;
-    const specialRequests = document.getElementById("specialRequests").value;
+    function calculateTotal() {
+        const selectedOption = sizeSelect.options[sizeSelect.selectedIndex];
+        const pricePerUnit = parseFloat(selectedOption.getAttribute("data-price")) || 0;
+        const quantity = parseInt(quantityInput.value) || 0;
+        const total = pricePerUnit * quantity;
+        totalPriceDisplay.textContent = `Total: $${total.toFixed(2)}`;
+    }
 
-    const orderData = {
-        name,
-        size,
-        scent,
-        quantity,
-        specialRequests
-    };
-
-    fetch("https://script.google.com/macros/s/AKfycbyIIBEk9uTpsgG4Oqasby-oxVRW-TB6Op_nHqy5sVUDCK4Vq74x8atLq8VrGC3SIXU7/exec", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: new URLSearchParams(orderData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.result === "Success") {
-            document.getElementById("message").innerText = "Your order has been submitted!";
-            document.getElementById("order-form").reset();
+    // Show/hide address field based on shipping checkbox
+    needsShippingCheckbox.addEventListener("change", function() {
+        if (needsShippingCheckbox.checked) {
+            addressField.style.display = "block";
+            addressField.querySelector("textarea").setAttribute("required", "required");
         } else {
-            document.getElementById("message").innerText = "There was an error with your submission.";
+            addressField.style.display = "none";
+            addressField.querySelector("textarea").removeAttribute("required");
         }
-    })
-    .catch(error => {
-        document.getElementById("message").innerText = "Error: " + error.message;
-        console.error("Fetch error: ", error);
     });
+
+    // Update total when size or quantity changes
+    sizeSelect.addEventListener("change", calculateTotal);
+    quantityInput.addEventListener("input", calculateTotal);
+
+    // Initial calculation
+    calculateTotal();
 });
