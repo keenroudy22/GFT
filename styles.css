@@ -16,8 +16,8 @@ body {
 
 /* Logo Styling */
 .logo {
-    width: 100px;
-    height: auto;
+    width: 150px; /* Adjust the width */
+    height: auto; /* Maintain aspect ratio */
     display: block;
     margin: 0 auto 20px;
 }
