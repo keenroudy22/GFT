@@ -1,3 +1,0 @@
-[build]
-  publish = "public"       # This folder contains index.html
-  functions = "functions" # This folder contains serverless functions
