@@ -12,23 +12,29 @@ exports.handler = async (event) => {
     try {
         const data = JSON.parse(event.body);
 
-        // Send Email
+        // Email Logic
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
+                user: process.env.EMAIL_USER, // Gmail address
+                pass: process.env.EMAIL_PASS, // Gmail app password
             },
         });
 
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
             to: "your-email@example.com",
-            subject: "New Order",
-            text: `Order Details:\nName: ${data.name}\nEmail: ${data.email}\nSize: ${data.size}\nScent: ${data.scent}`,
+            subject: "New Order Submission",
+            text: `Order Details:
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Size: ${data.size}
+Scent: ${data.scent}
+Quantity: ${data.quantity}`,
         });
 
-        // Update Google Sheets
+        // Google Sheets Logic
         const auth = new google.auth.GoogleAuth({
             credentials: {
                 client_email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -57,7 +63,7 @@ exports.handler = async (event) => {
         console.error("Error processing order:", error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ message: "Internal Server Error" }),
+            body: JSON.stringify({ message: "Internal Server Error", error: error.message }),
         };
     }
 };
